@@ -6,6 +6,7 @@
  *   1 Nav        - hold LEFT middle thumb  (&mo 1)
  *   2 Num+Sym    - hold RIGHT middle thumb (&mo 2)
  *   3 Accent/Sym - hold BOTH thumbs (conditional layer)
+ *                  rightmost column, top->bottom = Bluetooth slots 0, 1, 2
  *
  * Rules:
  *   - Bspc/Del live ONLY on the Typing layer.
@@ -172,9 +173,9 @@
                 accent_layer {
                         display-name = "Accent/Sym";
                         bindings = <
-   &trans &fr_agrave &fr_acirc &mm_euro   &fr_egrave &fr_ecirc   &fr_edier &fr_ugrave &fr_icirc &fr_ocirc &fr_idier &trans
-   &trans &trans     &kp DLLR  &trans     &trans     &trans      &trans    &fr_ucirc  &fr_udier &kp HASH  &trans   &trans
-   &trans &trans     &trans    &fr_cced   &trans     &trans      &es_ntilde &trans    &trans    &trans    &trans   &trans
+   &trans &fr_agrave &fr_acirc &mm_euro   &fr_egrave &fr_ecirc   &fr_edier &fr_ugrave &fr_icirc &fr_ocirc &fr_idier &bt BT_SEL 0
+   &trans &trans     &kp DLLR  &trans     &trans     &trans      &trans    &fr_ucirc  &fr_udier &kp HASH  &trans   &bt BT_SEL 1
+   &trans &trans     &trans    &fr_cced   &trans     &trans      &es_ntilde &trans    &trans    &trans    &trans   &bt BT_SEL 2
                   &kp LGUI &trans &kp SPACE   &kp RET &trans &kp LALT
                         >;
                 };
