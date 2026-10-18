@@ -1,12 +1,16 @@
 /*
- * My Corne (crkbd) keymap - ZMK
+ * Corne (crkbd) - ZMK - stealth AZERTY letters on a UK host, custom punctuation
  *
- * Layer 0: default   Layer 1: lower (held with left thumb)   Layer 2: raise (right thumb)
+ * Layers:
+ *   0 Typing     - AZERTY letters (UK host types them unchanged)
+ *   1 Nav        - hold LEFT middle thumb  (&mo 1)
+ *   2 Num+Sym    - hold RIGHT middle thumb (&mo 2)
+ *   3 Accent/Sym - hold BOTH thumbs (conditional layer)
  *
- * To edit: change the bindings below. Keycode names:
- *   https://zmk.dev/docs/codes
- * Behaviours like &mo, &bt, &kp:
- *   https://zmk.dev/docs/behaviors/key-press
+ * Rules:
+ *   - Bspc/Del live ONLY on the Typing layer.
+ *   - Punctuation keys carry their shifted partner via mod-morphs (,->? .->! '->" @->& /->|).
+ *   - Accents cluster around their base letter; symbols sit on a mnemonic letter key.
  */
 
 #include <behaviors.dtsi>
@@ -14,52 +18,117 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+        behaviors {
+                mm_comma: mm_comma {   // , / ?
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp COMMA>, <&kp QMARK>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+                mm_dot: mm_dot {       // . / !
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp DOT>, <&kp EXCL>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+                mm_apos: mm_apos {     // ' / "
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp SQT>, <&kp AT>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+                mm_at: mm_at {         // @ / &
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp LS(SQT)>, <&kp AMPS>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+                mm_slash: mm_slash {   // / / |
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&kp FSLH>, <&kp LS(NUBS)>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+                mm_euro: mm_euro {     // é / €
+                        compatible = "zmk,behavior-mod-morph";
+                        #binding-cells = <0>;
+                        bindings = <&fr_eacute>, <&kp RA(N4)>;
+                        mods = <(MOD_LSFT|MOD_RSFT)>;
+                };
+        };
+
+        macros {
+                uk_grave: uk_grave {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp GRAVE>, <&kp SPACE>;
+                };
+                fr_agrave: fr_agrave { bindings = <&kp GRAVE>, <&kp A>; };      // à
+                fr_acirc:  fr_acirc  { bindings = <&kp RA(N6)>, <&kp A>; };     // â
+                fr_eacute: fr_eacute { bindings = <&kp RA(E)>; };               // é
+                fr_egrave: fr_egrave { bindings = <&kp GRAVE>, <&kp E>; };      // è
+                fr_ecirc:  fr_ecirc  { bindings = <&kp RA(N6)>, <&kp E>; };     // ê
+                fr_edier:  fr_edier  { bindings = <&kp RA(N2)>, <&kp E>; };     // ë
+                fr_ugrave: fr_ugrave { bindings = <&kp GRAVE>, <&kp U>; };      // ù
+                fr_ucirc:  fr_ucirc  { bindings = <&kp RA(N6)>, <&kp U>; };     // û
+                fr_udier:  fr_udier  { bindings = <&kp RA(N2)>, <&kp U>; };     // ü
+                fr_icirc:  fr_icirc  { bindings = <&kp RA(N6)>, <&kp I>; };     // î
+                fr_idier:  fr_idier  { bindings = <&kp RA(N2)>, <&kp I>; };     // ï
+                fr_ocirc:  fr_ocirc  { bindings = <&kp RA(N6)>, <&kp O>; };     // ô
+                fr_cced:   fr_cced   { bindings = <&kp RA(C)>; };               // ç
+                es_ntilde: es_ntilde { bindings = <&kp RA(BSLH)>, <&kp N>; };   // ñ
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
-                        display-name = "Default";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+                        display-name = "Typing";
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+   &kp TAB   &kp A &kp Z &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp LCTRL &kp Q &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L &kp M      &kp DEL
+   &kp LSHFT &kp W &kp X &kp C &kp V &kp B   &kp N &mm_comma &mm_dot &mm_apos &mm_at &mm_slash
                   &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
                         >;
                 };
 
-                lower_layer {
-                        display-name = "Lower";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-// | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | LFT | DWN |  UP | RGT |CLRALL|      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                nav_layer {
+                        display-name = "Nav";
+// left: Esc + F1-F10 (gap under Esc) + media     right: Home/Up/End/PgUp over Left/Down/Right/PgDn
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &bt BT_CLR_ALL &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
+   &kp ESC   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5      &kp LC(LEFT) &kp LC(RIGHT) &trans   &trans   &trans &trans
+   &trans    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10     &kp HOME &kp UP  &kp END  &kp PG_UP &trans &trans
+   &kp C_PLAY_PAUSE &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP   &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN &trans &trans
+                  &kp LGUI &trans &kp SPACE   &kp RET &trans &kp RALT
                         >;
                 };
 
-                raise_layer {
-                        display-name = "Raise";
-// -----------------------------------------------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
+                numsym_layer {
+                        display-name = "Num+Sym";
                         bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
+   &kp BSLH  &kp PRCNT &kp CARET &uk_grave &kp LS(BSLH) &kp AMPS   &kp N7 &kp N8 &kp N9 &kp PLUS  &kp ASTRK &kp FSLH
+   &kp LPAR  &kp RPAR  &kp LBKT  &kp RBKT  &kp LBRC     &kp RBRC   &kp N4 &kp N5 &kp N6 &kp MINUS &kp EQUAL &kp NUBS
+   &kp SEMI  &kp COLON &kp LS(COMMA) &kp LS(DOT) &kp NUBS &kp LS(NUBS)   &kp N1 &kp N2 &kp N3 &kp N0 &kp DOT &trans
+                  &kp LGUI &trans &kp SPACE   &kp RET &trans &kp RALT
                         >;
+                };
+
+                accent_layer {
+                        display-name = "Accent/Sym";
+                        bindings = <
+   &trans &fr_agrave &fr_acirc &mm_euro   &fr_egrave &fr_ecirc   &fr_edier &fr_ugrave &fr_icirc &fr_ocirc &fr_idier &trans
+   &trans &trans     &kp DLLR  &trans     &trans     &trans      &trans    &fr_ucirc  &fr_udier &kp HASH  &trans   &trans
+   &trans &trans     &trans    &fr_cced   &trans     &trans      &es_ntilde &trans    &trans    &trans    &trans   &trans
+                  &kp LGUI &trans &kp SPACE   &kp RET &trans &kp RALT
+                        >;
+                };
+        };
+
+        conditional_layers {
+                compatible = "zmk,conditional-layers";
+                accents {
+                        if-layers = <1 2>;
+                        then-layer = <3>;
                 };
         };
 };
