@@ -144,7 +144,7 @@
    &kp TAB   &kp A &kp Z &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LCTRL &kp Q &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L &kp M      &kp DEL
    &kp LSHFT &kp W &kp X &kp C &kp V &kp B   &kp N &mm_comma &mm_dot &mm_apos &mm_at &mm_slash
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp LALT
                         >;
                 };
 
@@ -155,7 +155,7 @@
    &kp ESC   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5      &kp LC(LEFT) &kp LC(RIGHT) &trans   &trans   &trans &trans
    &trans    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10     &kp HOME &kp UP  &kp END  &kp PG_UP &trans &trans
    &kp C_PLAY_PAUSE &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP   &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN &trans &trans
-                  &kp LGUI &trans &kp SPACE   &kp RET &trans &kp RALT
+                  &kp LGUI &trans &kp SPACE   &kp RET &trans &kp LALT
                         >;
                 };
 
@@ -165,7 +165,7 @@
    &kp BSLH  &kp PRCNT &kp CARET &uk_grave &kp LS(BSLH) &kp AMPS   &kp N7 &kp N8 &kp N9 &kp PLUS  &kp ASTRK &kp FSLH
    &kp LPAR  &kp RPAR  &kp LBKT  &kp RBKT  &kp LBRC     &kp RBRC   &kp N4 &kp N5 &kp N6 &kp MINUS &kp EQUAL &kp NUBS
    &kp SEMI  &kp COLON &kp LS(COMMA) &kp LS(DOT) &kp NUBS &kp LS(NUBS)   &kp N1 &kp N2 &kp N3 &kp N0 &kp DOT &trans
-                  &kp LGUI &trans &kp SPACE   &kp RET &trans &kp RALT
+                  &kp LGUI &trans &kp SPACE   &kp RET &trans &kp LALT
                         >;
                 };
 
@@ -175,7 +175,7 @@
    &trans &fr_agrave &fr_acirc &mm_euro   &fr_egrave &fr_ecirc   &fr_edier &fr_ugrave &fr_icirc &fr_ocirc &fr_idier &trans
    &trans &trans     &kp DLLR  &trans     &trans     &trans      &trans    &fr_ucirc  &fr_udier &kp HASH  &trans   &trans
    &trans &trans     &trans    &fr_cced   &trans     &trans      &es_ntilde &trans    &trans    &trans    &trans   &trans
-                  &kp LGUI &trans &kp SPACE   &kp RET &trans &kp RALT
+                  &kp LGUI &trans &kp SPACE   &kp RET &trans &kp LALT
                         >;
                 };
         };
