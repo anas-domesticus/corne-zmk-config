@@ -1,0 +1,10 @@
+# Python venv / tooling
+tools/.venv/
+
+# Generated render artefacts (keep the SVG; ignore the rest)
+tools/out/corne.yaml
+tools/out/corne.png
+tools/out/keymap.html
+tools/out/watch.log
+
+.DS_Store
