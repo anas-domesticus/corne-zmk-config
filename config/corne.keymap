@@ -63,20 +63,76 @@
                         #binding-cells = <0>;
                         bindings = <&kp GRAVE>, <&kp SPACE>;
                 };
-                fr_agrave: fr_agrave { bindings = <&kp GRAVE>, <&kp A>; };      // à
-                fr_acirc:  fr_acirc  { bindings = <&kp RA(N6)>, <&kp A>; };     // â
-                fr_eacute: fr_eacute { bindings = <&kp RA(E)>; };               // é
-                fr_egrave: fr_egrave { bindings = <&kp GRAVE>, <&kp E>; };      // è
-                fr_ecirc:  fr_ecirc  { bindings = <&kp RA(N6)>, <&kp E>; };     // ê
-                fr_edier:  fr_edier  { bindings = <&kp RA(N2)>, <&kp E>; };     // ë
-                fr_ugrave: fr_ugrave { bindings = <&kp GRAVE>, <&kp U>; };      // ù
-                fr_ucirc:  fr_ucirc  { bindings = <&kp RA(N6)>, <&kp U>; };     // û
-                fr_udier:  fr_udier  { bindings = <&kp RA(N2)>, <&kp U>; };     // ü
-                fr_icirc:  fr_icirc  { bindings = <&kp RA(N6)>, <&kp I>; };     // î
-                fr_idier:  fr_idier  { bindings = <&kp RA(N2)>, <&kp I>; };     // ï
-                fr_ocirc:  fr_ocirc  { bindings = <&kp RA(N6)>, <&kp O>; };     // ô
-                fr_cced:   fr_cced   { bindings = <&kp RA(C)>; };               // ç
-                es_ntilde: es_ntilde { bindings = <&kp RA(BSLH)>, <&kp N>; };   // ñ
+                fr_agrave: fr_agrave {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp GRAVE>, <&kp A>;      // à
+                };
+                fr_acirc: fr_acirc {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(N6)>, <&kp A>;     // â
+                };
+                fr_eacute: fr_eacute {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(E)>;               // é
+                };
+                fr_egrave: fr_egrave {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp GRAVE>, <&kp E>;      // è
+                };
+                fr_ecirc: fr_ecirc {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(N6)>, <&kp E>;     // ê
+                };
+                fr_edier: fr_edier {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(N2)>, <&kp E>;     // ë
+                };
+                fr_ugrave: fr_ugrave {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp GRAVE>, <&kp U>;      // ù
+                };
+                fr_ucirc: fr_ucirc {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(N6)>, <&kp U>;     // û
+                };
+                fr_udier: fr_udier {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(N2)>, <&kp U>;     // ü
+                };
+                fr_icirc: fr_icirc {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(N6)>, <&kp I>;     // î
+                };
+                fr_idier: fr_idier {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(N2)>, <&kp I>;     // ï
+                };
+                fr_ocirc: fr_ocirc {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(N6)>, <&kp O>;     // ô
+                };
+                fr_cced: fr_cced {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(C)>;               // ç
+                };
+                es_ntilde: es_ntilde {
+                        compatible = "zmk,behavior-macro";
+                        #binding-cells = <0>;
+                        bindings = <&kp RA(BSLH)>, <&kp N>;   // ñ
+                };
         };
 
         keymap {
