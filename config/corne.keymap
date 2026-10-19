@@ -10,7 +10,7 @@
  *
  * Rules:
  *   - Bspc/Del live ONLY on the Typing layer.
- *   - Punctuation keys carry their shifted partner via mod-morphs (,->? .->! '->" @->& /->|).
+ *   - Punctuation keys carry their shifted partner via mod-morphs (,->? .->! '->" &->@ /->|).
  *   - Accents cluster around their base letter; symbols sit on a mnemonic letter key.
  */
 
@@ -38,10 +38,10 @@
                         bindings = <&kp SQT>, <&kp AT>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
-                mm_at: mm_at {         // @ / &
+                mm_amps: mm_amps {     // & / @
                         compatible = "zmk,behavior-mod-morph";
                         #binding-cells = <0>;
-                        bindings = <&kp LS(SQT)>, <&kp AMPS>;
+                        bindings = <&kp AMPS>, <&kp LS(SQT)>;
                         mods = <(MOD_LSFT|MOD_RSFT)>;
                 };
                 mm_slash: mm_slash {   // / / |
@@ -144,7 +144,7 @@
                         bindings = <
    &kp TAB   &kp A &kp Z &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
    &kp LSHFT &kp Q &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L &kp M      &kp DEL
-   &kp LCTRL &kp W &kp X &kp C &kp V &kp B   &kp N &mm_comma &mm_dot &mm_apos &mm_at &mm_slash
+   &kp LCTRL &kp W &kp X &kp C &kp V &kp B   &kp N &mm_comma &mm_dot &mm_apos &mm_amps &mm_slash
                   &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp LALT
                         >;
                 };
