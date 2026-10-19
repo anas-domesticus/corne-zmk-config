@@ -61,6 +61,11 @@ RAW = {
     "&es_ntilde": "ñ",
     "&kp TILDE": "\u00ac",   # Shift+` -> ¬ on UK
     "&kp RA(N4)": "\u20ac",  # AltGr+4 -> €
+    # app launchers (hyper = Cmd+Ctrl+Shift, matches Karabiner)
+    "&kp LS(LG(LC(T)))": "Ghostty",
+    "&kp LS(LG(LC(S)))": "Spotify",
+    "&kp LS(LG(LC(B)))": "Brave",
+    "&kp LS(LG(LC(SEMI)))": "Slack",
 }
 
 config = {
