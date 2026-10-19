@@ -151,11 +151,12 @@
 
                 nav_layer {
                         display-name = "Nav";
-// left: Esc + F1-F10 (gap under Esc) + media     right: Home/Up/End/PgUp over Left/Down/Right/PgDn
+// left: Esc + F1-F10 + Cmd-Shift-4 area screenshot (under Esc) + media
+// right: Home/Up/End/PgUp over Left/Down/Right/PgDn
 // top-right: app launchers (hyper = Cmd+Ctrl+Shift, matches Karabiner bindings)
                         bindings = <
    &kp ESC   &kp F1  &kp F2  &kp F3  &kp F4  &kp F5      &kp LC(LEFT) &kp LC(RIGHT) &kp LS(LG(LC(T))) &kp LS(LG(LC(S))) &kp LS(LG(LC(B))) &kp LS(LG(LC(SEMI)))
-   &trans    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10     &kp HOME &kp UP  &kp END  &kp PG_UP &trans &trans
+   &kp LS(LG(N4)) &kp F6  &kp F7  &kp F8  &kp F9  &kp F10     &kp HOME &kp UP  &kp END  &kp PG_UP &trans &trans
    &kp C_PLAY_PAUSE &kp C_PREV &kp C_NEXT &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP   &kp LEFT &kp DOWN &kp RIGHT &kp PG_DN &trans &trans
                   &kp LGUI &trans &kp SPACE   &kp RET &trans &kp LALT
                         >;
