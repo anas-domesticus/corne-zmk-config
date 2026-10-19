@@ -19,7 +19,7 @@ AltGr/dead-key macros for accented characters.
 | # | Name | Activator | Contents |
 |---|------|-----------|----------|
 | 0 | **Typing** | base | AZERTY letters, custom punctuation, Bspc/Del (only here) |
-| 1 | **Nav** | hold left middle thumb | F1–F10, media keys, arrows, Home/End/PgUp/PgDn, word-jump (Ctrl+←/→) |
+| 1 | **Nav** | hold left middle thumb | F1–F10, media keys, arrows, Home/End/PgUp/PgDn, word-jump (Ctrl+←/→), app launchers (⌘⌃⇧+T/S/B/; → Ghostty/Spotify/Brave/Slack) |
 | 2 | **Num+Sym** | hold right middle thumb | numpad-style digits, brackets, operators |
 | 3 | **Accent/Sym** | hold **both** thumbs (conditional layer) | French accents (à â é è ê ë ù û ü î ï ô ç), ñ, €, $, #, Bluetooth slot select |
 
