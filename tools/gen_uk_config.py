@@ -66,6 +66,8 @@ RAW = {
     "&kp LS(LG(LC(S)))": "Spotify",
     "&kp LS(LG(LC(B)))": "Brave",
     "&kp LS(LG(LC(SEMI)))": "Slack",
+    # screenshot (macOS Cmd+Shift+4, area capture)
+    "&kp LS(LG(N4))": "⌘⇧4",
 }
 
 config = {

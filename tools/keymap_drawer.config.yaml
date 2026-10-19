@@ -56,3 +56,4 @@ parse_config:
     '&kp LS(LG(LC(S)))': Spotify
     '&kp LS(LG(LC(B)))': Brave
     '&kp LS(LG(LC(SEMI)))': Slack
+    '&kp LS(LG(N4))': ⌘⇧4
