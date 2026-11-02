@@ -4,7 +4,7 @@ ZMK firmware config for a wireless Corne (crkbd) with nice!nano v2 controllers â
 "stealth AZERTY": AZERTY letters typed unchanged through a **UK `gb` host layout**,
 plus custom punctuation and French/Spanish accents.
 
-![Keymap](tools/out/corne.svg)
+![Keymap](tools/out/corne.svg?v=2)
 
 ## Keymap concept
 
