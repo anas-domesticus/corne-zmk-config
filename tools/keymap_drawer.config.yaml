@@ -57,3 +57,5 @@ parse_config:
     '&kp LS(LG(LC(B)))': Brave
     '&kp LS(LG(LC(SEMI)))': Slack
     '&kp LS(LG(N4))': ⌘⇧4
+    '&kp LS(LG(LC(MINUS)))': Smaller
+    '&kp LS(LG(LC(EQUAL)))': Bigger
