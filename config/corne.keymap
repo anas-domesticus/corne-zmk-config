@@ -164,10 +164,13 @@
 
                 numsym_layer {
                         display-name = "Num+Sym";
+// left : symbols; twins {}/[] and ()/<> straddle the split (left inner <-> right inner)
+// right: numpad shifted two columns right -> 7/4/1 at c8, 8/5/2 at c9, 9/6/3 at c10,
+//        operators * - + down the far-right column, 0 . in the leftover inner cells
                         bindings = <
-   &kp BSLH  &kp PRCNT &kp CARET &uk_grave &kp LS(BSLH) &kp AMPS   &kp N7 &kp N8 &kp N9 &kp PLUS  &kp ASTRK &kp FSLH
-   &kp LPAR  &kp RPAR  &kp LBKT  &kp RBKT  &kp LBRC     &kp RBRC   &kp N4 &kp N5 &kp N6 &kp MINUS &kp EQUAL &kp NUBS
-   &kp SEMI  &kp COLON &kp LS(COMMA) &kp LS(DOT) &kp NUBS &kp LS(NUBS)   &kp N1 &kp N2 &kp N3 &kp N0 &kp DOT &trans
+   &kp BSLH  &kp PRCNT    &kp CARET &uk_grave &kp LBKT     &kp LBRC   &kp RBRC &kp RBKT  &kp N7 &kp N8 &kp N9 &kp ASTRK
+   &kp EQUAL &kp ASTRK    &kp PLUS  &kp MINUS &kp LS(COMMA) &kp LPAR   &kp RPAR &kp LS(DOT) &kp N4 &kp N5 &kp N6 &kp MINUS
+   &kp SEMI  &kp COLON    &kp FSLH  &kp NUBS  &kp LS(NUBS) &kp LS(BSLH)   &kp N0 &kp DOT &kp N1 &kp N2 &kp N3 &kp PLUS
                   &kp LGUI &trans &kp SPACE   &kp RET &trans &kp LALT
                         >;
                 };

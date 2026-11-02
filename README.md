@@ -20,13 +20,15 @@ AltGr/dead-key macros for accented characters.
 |---|------|-----------|----------|
 | 0 | **Typing** | base | AZERTY letters, custom punctuation, Bspc/Del (only here) |
 | 1 | **Nav** | hold left middle thumb | F1–F10, media keys, arrows, Home/End/PgUp/PgDn, word-jump (Ctrl+←/→), app launchers (⌘⌃⇧+T/S/B/; → Ghostty/Spotify/Brave/Slack) |
-| 2 | **Num+Sym** | hold right middle thumb | numpad-style digits, brackets, operators |
+| 2 | **Num+Sym** | hold right middle thumb | symbols on the left half, numpad (shifted two columns right) on the right half |
 | 3 | **Accent/Sym** | hold **both** thumbs (conditional layer) | French accents (à â é è ê ë ù û ü î ï ô ç), ñ, €, $, #, Bluetooth slot select |
 
 ### Design rules
 
 - **Bspc/Del live only on the Typing layer** — no accidental deletes while navigating.
 - **Punctuation mod-morphs** — shift changes the character: `,→?` `.→!` `'→"` `@→&` `/→|` `é→€`.
+- **Twinned symbols straddle the split** on Num+Sym — `{ }`, `[ ]`, `( )`, `< >` sit on
+  facing inner columns so each pair is one key apart across the halves.
 - **Accents cluster around their base letter**; symbols sit on a mnemonic key.
 - Accents are macros over a UK host: dead-key grave, `AltGr` combos (`AltGr+6`+letter
   for circumflex, `AltGr+2`+letter for diaeresis, `AltGr+E` for é, `AltGr+C` for ç,
